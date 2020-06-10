@@ -1,4 +1,4 @@
-package com.example.quickmathsgame;
+package com.example.quickmathsgame.AppUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.quickmathsgame.ui.main.MainFragment;
+import com.example.quickmathsgame.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mPlayBtn;
+    private Button mPlayBtn,mLeaderboardBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,20 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         mPlayBtn = findViewById(R.id.btn_play);
+        mLeaderboardBtn=findViewById(R.id.btn_leaderboard);
+
         mPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, GameActivity.class);
+                startActivity(i);
+            }
+        });
+
+        mLeaderboardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,LeaderboardActivity.class);
                 startActivity(i);
             }
         });

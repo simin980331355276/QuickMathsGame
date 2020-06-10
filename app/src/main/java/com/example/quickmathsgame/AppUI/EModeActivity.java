@@ -1,14 +1,16 @@
-package com.example.quickmathsgame;
+package com.example.quickmathsgame.AppUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class GameActivity extends AppCompatActivity {
+import com.example.quickmathsgame.R;
+
+public class EModeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_emode);
     }
 }
