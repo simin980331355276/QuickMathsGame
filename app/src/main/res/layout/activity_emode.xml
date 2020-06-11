@@ -9,6 +9,18 @@
     tools:context=".AppUI.EModeActivity">
 
 
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="79dp"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rectangle_score"
+        android:elevation="4dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="28dp" />
+
     <TextView
         android:id="@+id/text_view_countdown"
         android:layout_width="85dp"
@@ -24,7 +36,6 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <!-- Easy -->
-
     <TextView
         android:id="@+id/easy"
         android:layout_width="45dp"
