@@ -9,6 +9,10 @@
     tools:context=".AppUI.EModeActivity">
 
 
+    <!-- Easy -->
+
+
+
     <View
         android:id="@+id/rectangle_1"
         android:layout_width="79dp"
@@ -18,7 +22,7 @@
         android:background="@drawable/rectangle_score"
         android:elevation="4dp"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="28dp" />
 
     <TextView
@@ -30,12 +34,11 @@
         android:textSize="30dp"
         app:fontFamily="@font/baloo"
         app:layout_constraintEnd_toStartOf="@+id/imgBtn_setting"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintLeft_toLeftOf="@id/imgBtn_setting"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="16dp" />
 
-    <!-- Easy -->
     <TextView
         android:id="@+id/easy"
         android:layout_width="45dp"
@@ -45,8 +48,8 @@
         android:textSize="18dp"
         android:typeface="normal"
         app:fontFamily="sans-serif-medium"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="52dp" />
+        tools:layout_editor_absoluteX="199dp"
+        tools:layout_editor_absoluteY="53dp" />
 
     <ImageButton
             android:id="@+id/imgBtn_setting"
@@ -62,6 +65,30 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/icon_setting_s" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_n1"
+        android:layout_width="74dp"
+        android:layout_height="78dp"
+        android:background="@drawable/button_style_content"
+        tools:layout_editor_absoluteX="59dp"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_n2"
+        android:layout_width="74dp"
+        android:layout_height="78dp"
+        android:background="@drawable/button_style_content"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="499dp" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_n3"
+        android:layout_width="74dp"
+        android:layout_height="78dp"
+        android:background="@drawable/button_style_content"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="282dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
