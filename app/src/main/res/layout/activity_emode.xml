@@ -12,18 +12,20 @@
     <!-- Easy -->
 
 
-
     <View
         android:id="@+id/rectangle_1"
         android:layout_width="79dp"
         android:layout_height="38dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/rectangle_score"
         android:elevation="4dp"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="28dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_view_countdown"
@@ -48,8 +50,10 @@
         android:textSize="18dp"
         android:typeface="normal"
         app:fontFamily="sans-serif-medium"
-        tools:layout_editor_absoluteX="199dp"
-        tools:layout_editor_absoluteY="53dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_countdown" />
 
     <ImageButton
             android:id="@+id/imgBtn_setting"
@@ -66,29 +70,12 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/icon_setting_s" />
 
-    <ImageButton
-        android:id="@+id/imgBtn_n1"
-        android:layout_width="74dp"
-        android:layout_height="78dp"
-        android:background="@drawable/button_style_content"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="350dp" />
-
-    <ImageButton
-        android:id="@+id/imgBtn_n2"
-        android:layout_width="74dp"
-        android:layout_height="78dp"
-        android:background="@drawable/button_style_content"
-        tools:layout_editor_absoluteX="207dp"
-        tools:layout_editor_absoluteY="499dp" />
-
-    <ImageButton
-        android:id="@+id/imgBtn_n3"
-        android:layout_width="74dp"
-        android:layout_height="78dp"
-        android:background="@drawable/button_style_content"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="282dp" />
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

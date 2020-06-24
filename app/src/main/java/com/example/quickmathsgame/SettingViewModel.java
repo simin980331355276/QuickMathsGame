@@ -2,6 +2,6 @@ package com.example.quickmathsgame;
 
 import androidx.lifecycle.ViewModel;
 
-public class EmodeViewModel extends ViewModel {
+public class SettingViewModel extends ViewModel {
     // TODO: Implement the ViewModel
 }

@@ -8,4 +8,6 @@
     <color name="colorPink">#f666f0</color>
     <color name="colorCorrect">#00FF00</color>
     <color name="colorWrong">#ff0000</color>
+    <color name="colorLightGrey">#C7E9EBEE</color>
+    <color name="colorPurple">#8776F2</color>
 </resources>
