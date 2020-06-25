@@ -31,7 +31,7 @@
         android:layout_marginLeft="78dp"
         android:layout_marginTop="225dp"
         android:layout_marginBottom="59dp"
-        android:background="@drawable/button_style_setting"
+        android:background="@drawable/button_default"
         app:layout_constraintBottom_toTopOf="@+id/imgBtn_sound"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,12 +46,27 @@
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
         android:layout_marginBottom="59dp"
-        android:background="@drawable/button_style_setting"
+        android:background="@drawable/button_default"
         app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.357"
         app:srcCompat="@drawable/icon_resume_s" />
+
+    <TextView
+        android:id="@+id/txtv_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="12dp"
+        android:text="Sound On"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_sound"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/imgBtn_sound"
@@ -60,10 +75,39 @@
         android:layout_marginStart="78dp"
         android:layout_marginLeft="78dp"
         android:layout_marginBottom="224dp"
-        android:background="@drawable/button_style_setting"
+        android:background="@drawable/button_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/icon_sound_s"/>
+
+    <TextView
+        android:id="@+id/txtv_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="28dp"
+        android:text="Resume"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_music"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_resume"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtv_restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:text="Restart"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgBtn_sound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_restart"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/imgBtn_music"
@@ -72,9 +116,24 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:layout_marginBottom="224dp"
-        android:background="@drawable/button_style_setting"
+        android:background="@drawable/button_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/icon_music_s" />
+
+    <TextView
+        android:id="@+id/txtv_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        android:layout_marginBottom="108dp"
+        android:text="Music On"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtn_music"
+        app:layout_constraintVertical_bias="0.144" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

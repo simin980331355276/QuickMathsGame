@@ -9,14 +9,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.quickmathsgame.AppUI.EModeActivity;
 import com.example.quickmathsgame.AppUI.GameActivity;
@@ -41,7 +39,11 @@ public class setting extends Fragment {
         ImageButton imgrestart = (ImageButton)view.findViewById(R.id.imgBtn_restart);
         ImageButton imgresume = (ImageButton)view.findViewById(R.id.imgBtn_resume);
         final ImageButton imgsound = (ImageButton)view.findViewById(R.id.imgBtn_sound);
-        ImageButton imgmusic = (ImageButton)view.findViewById(R.id.imgBtn_music);
+        final ImageButton imgmusic = (ImageButton)view.findViewById(R.id.imgBtn_music);
+
+        //textview
+        final TextView tvs = (TextView)view.findViewById(R.id.txtv_sound);
+        final TextView tvm = (TextView)view.findViewById(R.id.txtv_music);
 
         //close button
         imgclose.setOnClickListener(new View.OnClickListener() {
@@ -74,11 +76,33 @@ public class setting extends Fragment {
             public void onClick(View v) {
                 if(buttonState % 2 == 1){
                     //imgsound.setBackgroundColor(getResources().getColor(R.color.colorWrong));
-                    imgsound.setImageResource(R.drawable.button_style_content);
+                    //imgsound.setImageResource(R.drawable.button_style_content);
+                    imgsound.setClickable(false);
+                    //Toast.makeText(getActivity(),"Off Sound", Toast.LENGTH_SHORT).show();
+                    tvs.setText("Sound Off");
                 }
                 else{
                     //imgsound.setBackgroundColor(getResources().getColor(R.color.colorPurple));
-                    imgsound.setImageResource(R.drawable.button_style_setting);
+                    //imgsound.setImageResource(R.drawable.button_default);
+                    imgsound.setClickable(true);
+                    //Toast.makeText(getActivity(),"On Sound", Toast.LENGTH_SHORT).show();
+                    tvs.setText("Sound On");
+                }
+                buttonState++;
+            }
+        });
+
+        //music button
+        imgmusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(buttonState % 2 == 1){
+                    imgmusic.setEnabled(false);
+                    tvm.setText("Music Off");
+                }
+                else{
+                    imgmusic.setEnabled(true);
+                    tvm.setText("Music On");
                 }
                 buttonState++;
             }
