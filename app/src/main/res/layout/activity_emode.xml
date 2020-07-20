@@ -12,6 +12,14 @@
     <!-- Easy -->
 
 
+    <FrameLayout
+        android:id="@+id/frameLayoutnode"
+        android:layout_width="412dp"
+        android:layout_height="616dp"
+        tools:layout_editor_absoluteY="115dp">
+
+    </FrameLayout>
+
     <View
         android:id="@+id/rectangle_1"
         android:layout_width="79dp"
@@ -67,12 +75,10 @@
         app:srcCompat="@drawable/icon_setting_s" />
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/frameLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
