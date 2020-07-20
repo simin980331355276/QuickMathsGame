@@ -1,13 +1,12 @@
-package com.example.quickmathsgame;
+package com.example.quickmathsgame.AppUI;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,19 +16,34 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.quickmathsgame.AppUI.EModeActivity;
 import com.example.quickmathsgame.AppUI.GameActivity;
 import com.example.quickmathsgame.AppUI.MainActivity;
+import com.example.quickmathsgame.Model.MessageBoxViewModel;
+import com.example.quickmathsgame.R;
 
 public class messagebox extends Fragment {
 
     private MessageBoxViewModel mViewModel;
+
+    TextView mTextViewFragmentSCORE;
+    String mScore;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.popup_messagebox, container, false);
 
-        ImageButton imgrestart = (ImageButton)view.findViewById(R.id.imgBtn_msgBox_restart);
-        ImageButton imghome = (ImageButton)view.findViewById(R.id.imgBtn_msgBox_home);
-        ImageButton imgback = (ImageButton)view.findViewById(R.id.imgBtn_msgBox_back);
+        ImageButton imgrestart = (ImageButton) view.findViewById(R.id.imgBtn_msgBox_restart);
+        ImageButton imghome = (ImageButton) view.findViewById(R.id.imgBtn_msgBox_home);
+        ImageButton imgback = (ImageButton) view.findViewById(R.id.imgBtn_msgBox_back);
+
+
+        mTextViewFragmentSCORE = view.findViewById(R.id.user_score);
+//        String s = getActivity().getIntent().getStringExtra("score");
+
+
+//        Bundle bundle = getArguments();
+//        String score = bundle.getString("score");
+//        mTextViewFragmentSCORE.setText(score);
+
 
         //restart button
         imgrestart.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +80,7 @@ public class messagebox extends Fragment {
         startActivity(intent);
     }
 
-    private void back(){
+    private void back() {
         Intent intent = new Intent(getActivity(), GameActivity.class);
         startActivity(intent);
     }

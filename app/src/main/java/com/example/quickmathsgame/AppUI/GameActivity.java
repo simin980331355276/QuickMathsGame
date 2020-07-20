@@ -13,6 +13,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.quickmathsgame.R;
+//import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,7 +27,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     ImageButton btnBack;
     Button btnEasy,btnNormal,btnHard;
     FirebaseDatabase mFirebaseDatabase;
-
+    //FirebaseAuth mFirebaseAuth;
 
 
     @Override
@@ -91,11 +93,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             username.setError("Please enter player's name.");
         }
         else if(!n.isEmpty()){
+            //String uid = mFirebaseAuth.getInstance().getCurrentUser().getUid();
             DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Difficulty").child(m).child("Players").push();
             Map newPost = new HashMap();
             newPost.put("username",n);
             current_user_db.setValue(newPost);
-            startActivity(new Intent(GameActivity.this,EModeActivity.class));
+            Intent iToEgame = new Intent(GameActivity.this,EModeActivity.class);
+            //iToEgame.putExtra("uid",uid);
+            iToEgame.putExtra("username",n);
+            iToEgame.putExtra("mode",m);
+            startActivity(iToEgame);
         }
     }
 
