@@ -35,9 +35,8 @@
         android:textColor="@android:color/black"
         android:textSize="30dp"
         app:fontFamily="@font/baloo"
-        app:layout_constraintEnd_toStartOf="@+id/imgBtn_setting"
-        app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintLeft_toLeftOf="@id/imgBtn_setting"
+        app:layout_constraintEnd_toStartOf="@+id/n1"
+        app:layout_constraintHorizontal_bias="0.684"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,43 +55,24 @@
         app:layout_constraintTop_toBottomOf="@+id/text_view_countdown" />
 
     <ImageButton
-            android:id="@+id/imgBtn_setting"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="325dp"
-            android:background="@drawable/button_style"
-            app:layout_constraintBottom_toTopOf="@+id/Logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/icon_setting_s" />
-
-    <ImageButton
-        android:id="@+id/test"
+        android:id="@+id/n1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="325dp"
         android:background="@drawable/button_style"
-        app:layout_constraintBottom_toTopOf="@+id/Logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icon_setting_s" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

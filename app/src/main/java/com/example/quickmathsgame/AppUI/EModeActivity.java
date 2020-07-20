@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.quickmathsgame.R;
 import com.example.quickmathsgame.messagebox;
-import com.example.quickmathsgame.setting;
 
 import java.util.Locale;
 
@@ -34,7 +33,7 @@ public class EModeActivity extends AppCompatActivity {
         mTextViewCountdown = findViewById(R.id.text_view_countdown);
         showNextQuestion();
 
-
+        /*
         ImageButton imgsetting = (ImageButton)findViewById(R.id.imgBtn_setting);
         imgsetting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,8 +43,10 @@ public class EModeActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton test = (ImageButton)findViewById(R.id.test);
-        test.setOnClickListener(new View.OnClickListener() {
+         */
+
+        ImageButton setting = (ImageButton)findViewById(R.id.n1);
+        setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // load First Fragment
@@ -83,6 +84,10 @@ public class EModeActivity extends AppCompatActivity {
 
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d",minutes,seconds);
         mTextViewCountdown.setText(timeLeftFormatted);
+    }
+
+    private void checkAnswer(){
+
     }
 
     private void loadFragment(Fragment fragment) {
