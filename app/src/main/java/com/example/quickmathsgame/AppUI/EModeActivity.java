@@ -8,10 +8,12 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.quickmathsgame.R;
+import com.example.quickmathsgame.emode_node;
 import com.example.quickmathsgame.messagebox;
 
 import java.util.Locale;
@@ -24,12 +26,22 @@ public class EModeActivity extends AppCompatActivity {
     CountDownTimer mCountDownTimer;
     private long mTimeLeftInMillis;
 
+    //node
+    Button node1,node2,node3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emode);
 
+        //node_fragment
+        node1 = findViewById(R.id.n1);
+        node2 = findViewById(R.id.n2);
+        node3 = findViewById(R.id.n3);
+        loadFragment_node(new emode_node());
+
+        //timer
         mTextViewCountdown = findViewById(R.id.text_view_countdown);
         showNextQuestion();
 
@@ -88,6 +100,13 @@ public class EModeActivity extends AppCompatActivity {
 
     private void checkAnswer(){
 
+    }
+
+    private void loadFragment_node(Fragment fragment){
+        FragmentManager fmn = getSupportFragmentManager();
+        FragmentTransaction ftn = fmn.beginTransaction();
+        ftn.replace(R.id.frameLayout, fragment);
+        ftn.commit();
     }
 
     private void loadFragment(Fragment fragment) {
