@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.quickmathsgame.R;
+import com.example.quickmathsgame.messagebox;
 import com.example.quickmathsgame.setting;
 
 public class EModeActivity extends AppCompatActivity {
@@ -27,6 +28,15 @@ public class EModeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // load First Fragment
                 loadFragment(new setting());
+            }
+        });
+
+        ImageButton test = (ImageButton)findViewById(R.id.test);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // load First Fragment
+                loadFragment(new messagebox());
             }
         });
     }
