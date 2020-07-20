@@ -35,10 +35,7 @@ public class EModeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emode);
 
-        //node_fragment
-        node1 = findViewById(R.id.n1);
-        node2 = findViewById(R.id.n2);
-        node3 = findViewById(R.id.n3);
+
         loadFragment_node(new emode_node());
 
         //timer
