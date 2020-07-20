@@ -81,6 +81,8 @@ public class EModeActivity extends AppCompatActivity {
             public void onFinish() {
                 mTimeLeftInMillis = 0;
                 updateCountDownText();
+                loadFragment(new messagebox());
+
             }
         }.start();
     }
@@ -91,11 +93,15 @@ public class EModeActivity extends AppCompatActivity {
 
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d",minutes,seconds);
         mTextViewCountdown.setText(timeLeftFormatted);
+
+
+
     }
 
     private void checkAnswer(){
 
     }
+
 
     private void loadFragment_node(Fragment fragment){
         FragmentManager fmn = getSupportFragmentManager();
