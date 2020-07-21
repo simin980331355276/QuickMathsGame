@@ -57,14 +57,17 @@ public class LeaderboardActivity extends AppCompatActivity implements View.OnCli
             case R.id.easyBtn:
                 mode = "Easy";
                  RetrieveDataLeaderboard(mode);
+                 mArrayList.clear();
                 break;
             case R.id.normalBtn:
                 mode = "Normal";
                 RetrieveDataLeaderboard(mode);
+                mArrayList.clear();
                 break;
             case R.id.hardBtn:
                 mode = "Hard";
                 RetrieveDataLeaderboard(mode);
+                mArrayList.clear();
                 break;
         }
     }

@@ -30,6 +30,7 @@
             android:id="@+id/easyBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:background="@drawable/button_style"
             android:text="Easy" />
         <Button
@@ -37,6 +38,7 @@
             android:layout_toRightOf="@+id/easyBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:background="@drawable/button_style"
             android:text="normal" />
         <Button

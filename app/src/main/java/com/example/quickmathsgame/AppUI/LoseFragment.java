@@ -1,3 +1,48 @@
+//package com.example.quickmathsgame.AppUI;
+//
+//import android.content.Intent;
+//import android.os.Bundle;
+//import android.util.Log;
+//import android.view.LayoutInflater;
+//import android.view.View;
+//import android.view.ViewGroup;
+//import android.widget.ImageButton;
+//import android.widget.TextView;
+//
+//import androidx.annotation.NonNull;
+//import androidx.annotation.Nullable;
+//import androidx.fragment.app.Fragment;
+//import androidx.lifecycle.ViewModelProviders;
+//import androidx.room.Query;
+//
+//import com.example.quickmathsgame.AppUI.EModeActivity;
+//import com.example.quickmathsgame.AppUI.GameActivity;
+//import com.example.quickmathsgame.AppUI.MainActivity;
+//import com.example.quickmathsgame.Model.LeaderboardModel;
+//import com.example.quickmathsgame.Model.MessageBoxViewModel;
+//import com.example.quickmathsgame.R;
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.ValueEventListener;
+//
+//
+//public class LoseFragment extends Fragment {
+//
+//    @Override
+//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+//                             @Nullable Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.fragment_lose, container, false);
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_lose, container, false);
+//        String mode = getArguments().getString("mode");
+//        String score = getArguments().getString("score");
+//
+//        return view;
+//    }
+//}
+
 package com.example.quickmathsgame.AppUI;
 
 import android.content.Intent;
@@ -27,7 +72,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class messagebox extends Fragment {
+public class LoseFragment extends Fragment {
 
     private MessageBoxViewModel mViewModel;
 
@@ -36,7 +81,7 @@ public class messagebox extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.popup_messagebox, container, false);
+        View view = inflater.inflate(R.layout.fragment_lose, container, false);
 
 
         //ImageButton imgrestart = (ImageButton) view.findViewById(R.id.imgBtn_msgBox_restart);
@@ -47,28 +92,11 @@ public class messagebox extends Fragment {
         mTextViewMessage = view.findViewById(R.id.message);
 
         String mode = getArguments().getString("mode");
+        String score = getArguments().getString("score");
 
         mTextViewMode.setText(mode);
+        mTextViewScore.setText(score);
 
-        DatabaseReference player_id = FirebaseDatabase.getInstance().getReference().child("Difficulty").child(mode).child("Players");
-
-        player_id.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    LeaderboardModel mLeaderboardModel = ds.getValue(LeaderboardModel.class);
-                    String name = mLeaderboardModel.getUsername().toString();
-                    Integer score = mLeaderboardModel.getScore();
-                    mTextViewMessage.setText("Good Job " + name + "!");
-                    mTextViewScore.setText(score.toString());
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
         //restart button
 //        imgrestart.setOnClickListener(new View.OnClickListener() {
 //            @Override
