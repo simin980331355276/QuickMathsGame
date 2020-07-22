@@ -1,4 +1,4 @@
-package com.example.quickmathsgame;
+package com.example.quickmathsgame.Model;
 
 import androidx.lifecycle.ViewModel;
 

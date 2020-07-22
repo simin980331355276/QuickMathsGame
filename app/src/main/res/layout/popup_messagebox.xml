@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/messagebox"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -29,15 +28,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/score"
+                android:text="Mode:"
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/user_score"
+                android:id="@+id/mode"
+                android:text="a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2.5dp"
                 android:layout_marginLeft="15dp"
-                android:text="15"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="30dp" />
 
@@ -53,14 +53,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/high_score"
+                android:text="Your Score:"
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/user_high_score"
+                android:id="@+id/score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="2.5dp"
                 android:text="75"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="30dp" />
@@ -79,7 +80,6 @@
         android:background="@drawable/button_default"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:text="Good Job!"
         android:textColor="@color/colorWhite"
         android:textSize="25dp" />
 
@@ -90,13 +90,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-35dp">
 
-        <ImageButton
-            android:id="@+id/imgBtn_msgBox_restart"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/button_style"
-            android:src="@drawable/icon_restart_s" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/imgBtn_msgBox_restart"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="@drawable/button_style"-->
+<!--            android:src="@drawable/icon_restart_s" />-->
 
         <ImageButton
             android:id="@+id/imgBtn_msgBox_home"
