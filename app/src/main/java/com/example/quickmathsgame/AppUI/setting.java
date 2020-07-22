@@ -1,4 +1,4 @@
-package com.example.quickmathsgame;
+package com.example.quickmathsgame.AppUI;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -16,8 +16,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.quickmathsgame.AppUI.EModeActivity;
-import com.example.quickmathsgame.AppUI.GameActivity;
+import com.example.quickmathsgame.Model.SettingViewModel;
+import com.example.quickmathsgame.R;
 
 public class setting extends Fragment {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightGrey"
-    tools:context=".setting"
+    tools:context=".AppUI.setting"
     android:id="@+id/setting_frame">
 
     <ImageButton

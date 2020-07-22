@@ -1,22 +1,31 @@
 package com.example.quickmathsgame.Model;
 
 public class LeaderboardModel {
-    private String score;
+    //private String score;
+    private Integer score;
     private String username;
 
     public LeaderboardModel() {
     }
 
-    public LeaderboardModel(String score, String username) {
+    public LeaderboardModel(Integer score, String username) {
         this.score = score;
         this.username = username;
     }
 
-    public String getScore() {
+//    public String getScore() {
+//        return score;
+//    }
+
+    //public void setScore(String score) {
+//        this.score = score;
+//    }
+
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
 
