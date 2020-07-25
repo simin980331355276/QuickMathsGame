@@ -16,12 +16,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="LEADERBOARD" />
+            android:text="LEADERBOARD"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearl2"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -57,7 +59,11 @@
             android:id="@+id/list_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="130dp">
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/ldb_style">
         </ListView>
     </LinearLayout>
 </RelativeLayout>
