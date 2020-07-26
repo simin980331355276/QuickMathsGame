@@ -40,8 +40,8 @@ public class messagebox extends Fragment {
 
 
         //ImageButton imgrestart = (ImageButton) view.findViewById(R.id.imgBtn_msgBox_restart);
-        ImageButton imghome = (ImageButton) view.findViewById(R.id.imgBtn_msgBox_home);
-        ImageButton imgback = (ImageButton) view.findViewById(R.id.imgBtn_msgBox_back);
+        ImageButton imghome = view.findViewById(R.id.imgBtn_msgBox_home);
+        ImageButton imgback = view.findViewById(R.id.imgBtn_msgBox_back);
         mTextViewMode = view.findViewById(R.id.mode);
         mTextViewScore = view.findViewById(R.id.score);
         mTextViewMessage = view.findViewById(R.id.message);
@@ -57,7 +57,7 @@ public class messagebox extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     LeaderboardModel mLeaderboardModel = ds.getValue(LeaderboardModel.class);
-                    String name = mLeaderboardModel.getUsername().toString();
+                    String name = mLeaderboardModel.getUsername();
                     Integer score = mLeaderboardModel.getScore();
                     mTextViewMessage.setText("Good Job " + name + "!");
                     mTextViewScore.setText(score.toString());

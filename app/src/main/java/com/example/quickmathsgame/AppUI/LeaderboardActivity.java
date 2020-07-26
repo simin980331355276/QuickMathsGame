@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.quickmathsgame.Model.LeaderboardModel;
 import com.example.quickmathsgame.R;
@@ -22,16 +23,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class LeaderboardActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnEasy, btnNormal, btnHard;
     ListView mListView;
     FirebaseDatabase mFirebaseDatabase;
-    ArrayList<String> mArrayList=new ArrayList<>();
+    //ArrayList<String> mArrayList=new ArrayList<String>();
+    ArrayList<LeaderboardModel> mArrayList=new ArrayList();
     ArrayAdapter<String> mArrayAdapter;
     LeaderboardModel mLeaderboardModel;
+
+//    LeaderboardListAdapter adapter = new LeaderboardListAdapter(this, R.layout.leaderboard_data, mArrayList);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,17 +83,21 @@ public class LeaderboardActivity extends AppCompatActivity implements View.OnCli
 
         Query sort=ref.orderByChild("score").limitToLast(10);
 
-        mArrayAdapter = new ArrayAdapter<String>(this, R.layout.leaderboard_data, R.id.ldrboardName, mArrayList);
+        final LeaderboardListAdapter adapter = new LeaderboardListAdapter(this, R.layout.leaderboard_data, mArrayList);
+        //mArrayAdapter = new ArrayAdapter<String>(this, R.layout.leaderboard_data, R.id.ldrboardName, mArrayList);
+
         sort.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     mLeaderboardModel = ds.getValue(LeaderboardModel.class);
+
                     //mArrayList.add(mLeaderboardModel.getUsername() + " " + mLeaderboardModel.getScore().toString());
-                    mArrayList.add(mLeaderboardModel.getUsername() + " " + mLeaderboardModel.getScore());
+                    mArrayList.add(mLeaderboardModel);
                 }
                 Collections.reverse(mArrayList);
-                mListView.setAdapter(mArrayAdapter);
+
+                mListView.setAdapter(adapter);
             }
 
             @Override
