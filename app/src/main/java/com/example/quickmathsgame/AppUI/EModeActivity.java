@@ -117,15 +117,19 @@ public class EModeActivity extends AppCompatActivity {
         CountdownTime(uid, gamemode);
 
 
-//        ImageButton setting = (ImageButton) findViewById(R.id.n1);
-//        setting.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // load First Fragment
-//                loadFragment(new messagebox());
-//            }
-//        });
-//        showNextQuestion();
+        ImageButton setting = (ImageButton) findViewById(R.id.n1);
+           setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // load First Fragment
+                startActivity(new Intent(EModeActivity.this,GameActivity.class));
+                player.stop();
+                mCountDownTimer.cancel();
+                mTimeLeftInMillis = COUNTDOWN_IN_MILLIS;
+                mTimeLeftInMillis= 0;
+            }
+        });
+
 
     }
 
@@ -403,12 +407,12 @@ public class EModeActivity extends AppCompatActivity {
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                mTimeLeftInMillis = millisUntilFinished;
+                mTimeLeftInMillis = millisUntilFinished;    //start countdown and update the textview
                 updateCountDownText();
             }
 
             @Override
-            public void onFinish() {
+            public void onFinish() {    //when timer countdown finish, show the message box fragment
                 mTimeLeftInMillis = 0;
                 updateCountDownText();
                 //loadFragment(new messagebox());
@@ -416,6 +420,13 @@ public class EModeActivity extends AppCompatActivity {
                 player.stop();
             }
         }.start();
+    }
+    private void updateCountDownText() {
+        int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
+        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        mTextViewCountdown.setText(timeLeftFormatted);
     }
 
     private void generateFragment(String uid, String mode){
@@ -430,13 +441,7 @@ public class EModeActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    private void updateCountDownText() {
-        int minutes = (int) (mTimeLeftInMillis / 1000) / 60;
-        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
 
-        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-        mTextViewCountdown.setText(timeLeftFormatted);
-    }
 
 
     private void loadFragment(Fragment fragment) {

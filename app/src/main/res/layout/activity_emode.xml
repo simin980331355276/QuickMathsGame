@@ -75,15 +75,18 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:visibility="visible">
+
                 <ImageButton
                     android:id="@+id/n1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/button_style"
-                    android:layout_marginLeft="40dp"
-                    app:srcCompat="@drawable/icon_setting_s" />
+                    app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                    tools:visibility="visible" />
             </LinearLayout>
 
 
