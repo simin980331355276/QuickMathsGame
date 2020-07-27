@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -50,11 +51,17 @@ public class EModeActivity extends AppCompatActivity {
     TextView mTextView, mTextView2, mTextViewMode, mTextViewScore;
     Random random = new Random();
 
+    MediaPlayer player, player_wrong, player_correct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emode);
+
+        player = MediaPlayer.create(this, R.raw.gamemode);
+        player_wrong = MediaPlayer.create(this, R.raw.wrong);
+        player_correct = MediaPlayer.create(this, R.raw.correct);
+        player.start();
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         String uid = mPushkey = getIntent().getStringExtra("pushkey");
@@ -168,7 +175,7 @@ public class EModeActivity extends AppCompatActivity {
             case "Easy":
             case "Normal":
             case "Hard":
-                Button btns[] = new Button[30];
+                Button[] btns = new Button[30];
                 btns[0] = mBtn1;btns[1] = mBtn2;btns[2] = mBtn3;btns[3] = mBtn4;btns[4] = mBtn5; btns[5] = mBtn6;  btns[6] = mBtn7;btns[7] = mBtn8;btns[8] = mBtn9;btns[9] = mBtn10;
                 btns[10] = mBtn11;btns[11] = mBtn12;btns[12] = mBtn13;btns[13] = mBtn14;btns[14] = mBtn15; btns[15] = mBtn16;btns[16] = mBtn17;btns[17] = mBtn18;btns[18] = mBtn19;btns[19] = mBtn20;
                 btns[20] = mBtn21;btns[21] = mBtn22;btns[22] = mBtn23;btns[23] = mBtn24;btns[24] = mBtn25; btns[25] = mBtn26;btns[26] = mBtn27;btns[27] = mBtn28;btns[28] = mBtn29;btns[29] = mBtn30;
@@ -359,6 +366,8 @@ public class EModeActivity extends AppCompatActivity {
 
     private void generateLoseFragment(int score, String uid, String mode){
         mCountDownTimer.cancel();
+        player_wrong.start();
+        player.stop();
         mTimeLeftInMillis = COUNTDOWN_IN_MILLIS;
         mTimeLeftInMillis= 0;
 
@@ -374,6 +383,7 @@ public class EModeActivity extends AppCompatActivity {
     }
 
     private void scoreplus(int score, String m, String pushid, String name) {
+        player_correct.start();
         score++;
         startnew(score);
         DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Difficulty").child(m).child("Players").child(pushid);
@@ -403,6 +413,7 @@ public class EModeActivity extends AppCompatActivity {
                 updateCountDownText();
                 //loadFragment(new messagebox());
                 generateFragment(uid,mode);
+                player.stop();
             }
         }.start();
     }

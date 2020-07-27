@@ -8,7 +8,7 @@ public class LeaderboardModel {
     public LeaderboardModel() {
     }
 
-    public LeaderboardModel(Integer score, String username) {
+    public LeaderboardModel(String username, Integer score) {
         this.score = score;
         this.username = username;
     }
