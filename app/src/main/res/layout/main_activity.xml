@@ -8,35 +8,35 @@
     android:background="@color/colorPrimary"
     tools:context=".AppUI.MainActivity">
 
-    <ImageButton
-        android:id="@+id/imgBtn_music"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="325dp"
-        android:background="@drawable/button_style"
-        app:layout_constraintBottom_toTopOf="@+id/Logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_music_s" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imgBtn_music"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:layout_marginBottom="325dp"-->
+<!--        android:background="@drawable/button_style"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/Logo"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        app:srcCompat="@drawable/icon_music_s" />-->
 
-    <ImageButton
-        android:id="@+id/imgBtn_sound"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
-        android:layout_marginBottom="416dp"
-        android:background="@drawable/button_style"
-        app:layout_constraintBottom_toTopOf="@+id/Logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/icon_sound_s" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imgBtn_sound"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="76dp"-->
+<!--        android:layout_marginRight="76dp"-->
+<!--        android:layout_marginBottom="416dp"-->
+<!--        android:background="@drawable/button_style"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/Logo"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        app:srcCompat="@drawable/icon_sound_s" />-->
 
     <ImageView
         android:id="@+id/Logo"

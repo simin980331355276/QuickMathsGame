@@ -60,7 +60,7 @@ public class messagebox extends Fragment {
                     String name = mLeaderboardModel.getUsername();
                     Integer score = mLeaderboardModel.getScore();
                     mTextViewMessage.setText("Good Job " + name + "!");
-                    mTextViewScore.setText(score.toString());
+                    mTextViewScore.setText(String.valueOf(score));
                 }
             }
 
